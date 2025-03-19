@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { INote } from "../types";
 
 const DB_NAME = "notesDB";
 const STORE_NAME = "notes";
@@ -30,7 +31,7 @@ export function useIndexedDB() {
     };
   };
 
-  const addNote = (note: { title: string; description: string }) => {
+  const addNote = (note: INote) => {
     const request = indexedDB.open(DB_NAME, 1);
     request.onsuccess = (event: any) => {
       const db = event.target.result;

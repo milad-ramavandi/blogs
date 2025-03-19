@@ -1,3 +1,5 @@
+'use client';
+
 import {
   Card,
   CardContent,
@@ -5,28 +7,31 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete";
+import { INoteItem } from "@/app/types";
 
-interface NoteItemProps {
-  note: { id: number; title: string; description: string };
-  deleteNote: (id: number) => void;
-}
 
-export default function NoteItem({ note, deleteNote }: NoteItemProps) {
+
+export default function NoteItem({ note, deleteNote }: INoteItem) {
   return (
-    <Card sx={{ mb: 2 }} variant={"outlined"}>
+    <Card sx={{ mb: 2 }} variant={"outlined"} className={"group"}>
       <CardContent>
-        <Stack>
+        <Stack className={"space-y-3"}>
           <div className="flex justify-between items-center">
-            <Typography variant="subtitle1">{note.title}</Typography>
+            <div className="flex flex-col space-y-1">
+              <Typography variant="subtitle1">{note.title}</Typography>
+              <Typography variant="caption">{note?.createdAt?.toLocaleString("fa-IR")}</Typography>
+            </div>
 
             <IconButton
               color="error"
               onClick={() => confirm("حذف شود؟") && deleteNote(note.id!)}
+              className="opacity-0 group-hover:opacity-100 transition-opacity"
             >
-              حذف
+              <DeleteIcon />
             </IconButton>
           </div>
-          <Typography variant="body2" color="text.secondary">
+          <Typography variant="body1" color="text.secondary">
             {note.description}
           </Typography>
         </Stack>

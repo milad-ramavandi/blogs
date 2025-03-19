@@ -1,19 +1,18 @@
+'use client'
+import { INoteForm } from "@/app/types";
 import { Paper, TextField, Button, Stack } from "@mui/material";
-
 import { useState } from "react";
 
-interface NoteFormProps {
-  addNote: (note: { title: string; description: string }) => void;
-}
 
-export default function NoteForm({ addNote }: NoteFormProps) {
+
+export default function NoteForm({ addNote }: INoteForm) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!title) return;
-    addNote({ title, description });
+    addNote({ title, description, createdAt: new Date() });
     setTitle("");
     setDescription("");
   };

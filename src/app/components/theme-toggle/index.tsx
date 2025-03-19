@@ -1,13 +1,14 @@
+"use client";
 import { ThemeContext } from "@/app/context/ThemeContext";
-import { IconButton } from "@mui/material";
 import { useContext } from "react";
-
+import CustomSwitch from "../custom-switch";
 
 export default function ThemeToggle() {
-  const themeContext = useContext(ThemeContext)
+  const themeContext = useContext(ThemeContext);
   return (
-    <IconButton onClick={themeContext?.toggleTheme} className="text-black dark:text-white">
-      {themeContext?.theme === "dark" ? "تاریک" : "روشن"}
-    </IconButton>
+    <CustomSwitch
+      checked={themeContext?.theme === "dark"}
+      onChange={themeContext?.toggleTheme}
+    />
   );
 }

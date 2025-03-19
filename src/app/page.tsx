@@ -3,7 +3,7 @@ import { Container, Typography } from "@mui/material";
 import NoteForm from "./components/note-form";
 import NoteList from "./components/note-list";
 import ThemeToggle from "./components/theme-toggle";
-import { useIndexedDB } from "./hooks";
+import { useIndexedDB } from "./hooks/useIndexedDB";
 import { ThemeProviderCustom } from "./context/ThemeContext";
 
 export default function Home() {
