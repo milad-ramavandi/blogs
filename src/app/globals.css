@@ -2,3 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+.blog-content figure {
+  width: 100%;
+}
+.blog-content img {
+  width: 100%;
+  height: auto;
+}
+
+.blog-content p {
+  margin: 15px 0 !important;
+}
+
+.blog-content a {
+  color: #3b82f6;
+}
+
+.post-item {
+  @media (min-width: 520px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
