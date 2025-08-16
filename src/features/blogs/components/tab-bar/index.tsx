@@ -54,7 +54,7 @@ export default function TabBar() {
         <div
           ref={scrollRef}
           onScroll={checkForScrollPosition}
-          className="flex items-center justify-start sm:justify-center xl:justify-start gap-2 py-4 scrollbar-hide lg:ml-6 overflow-x-scroll"
+          className="flex items-center justify-start sm:justify-center xl:justify-start gap-2 py-4 scrollbar-hide pl-1.5 lg:pl-6 overflow-x-scroll"
         >
           {tabs.map((tab) => {
             return (

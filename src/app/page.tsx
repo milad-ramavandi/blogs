@@ -3,37 +3,37 @@ import { Metadata } from "next";
 import Script from "next/script";
 
 export const metadata:Metadata = {
-  title: "Blog | Lands Domains",
+  title: "Blog | Web3-Crypto",
   description:
-    "Read the latest articles, tutorials, and updates on web3, crypto, and decentralized technologies from the lands domains blog.",
+    "Read the latest articles, tutorials, and updates on web3, crypto, and decentralized technologies from the web3-crypto blog.",
   openGraph: {
-    title: "Blog | Lands Domains",
+    title: "Blog | Web3-Crypto",
     description:
-      "Stay up to date with insightful articles and expert content on crypto and web3 technology – all from the official lands domains blog.",
-    url: "https://lands.domains/blogs",
+      "Stay up to date with insightful articles and expert content on crypto and web3 technology – all from the official web3-crypto blog.",
+    url: "https://web3-crypto",
     type: "website",
     images: [
       {
-        url: "https://lands.domains/assets/og/lands.domains.png",
+        url: "https://web3-crypto/assets/og/web3-crypto.png",
         width: 600,
         height: 315,
-        alt: "Lands Domains Blog",
+        alt: "Web3-Crypto Blog",
         type: "image/png",
       },
     ],
-    siteName: "Lands Domains Blog",
+    siteName: "Web3-Crypto Blog",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blog | Lands Domains",
+    title: "Blog | Web3-Crypto",
     description:
-      "Explore crypto insights and web3 tutorials with the official Lands Domains blog. Stay informed and ahead of the curve!",
-    site: "@LandsDomains",
-    images: ["https://lands.domains/assets/og/lands.domains.png"],
+      "Explore crypto insights and web3 tutorials with the official Web3-Crypto blog. Stay informed and ahead of the curve!",
+    site: "@Web3-Crypto",
+    images: ["https://web3-crypto/assets/og/web3-crypto.png"],
   },
 
   alternates: {
-    canonical: "https://lands.domains/blogs/",
+    canonical: "https://web3-crypto",
   },
 };
 
@@ -55,16 +55,16 @@ const BlogsPage = async ({
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Blog",
-          url: "https://lands.domains/blogs",
-          name: "Lands Domains Blog",
+          url: "https://web3-crupto",
+          name: "Web3-Crypto Blog",
           description:
             "Articles and tutorials on web3 and crypto",
           publisher: {
             "@type": "Organization",
-            name: "Lands Domains",
+            name: "Web3-Crypto",
             logo: {
               "@type": "ImageObject",
-              url: "https://lands.domains/assets/og/lands.domains.png",
+              url: "https://web3-crypto/assets/og/web3-crypto.png",
             },
           },
         })}

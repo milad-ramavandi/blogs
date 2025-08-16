@@ -26,12 +26,12 @@ export async function generateMetadata({
   const parsedTexts = parseHtmlContent(blog?.[0]?.excerpt?.rendered).text;
 
   return {
-    title: blog?.[0]?.title?.rendered + "Blog Post | Lands Domains",
+    title: blog?.[0]?.title?.rendered + "Blog Post | Web3-Crypto",
     description:
       parsedTexts +
-      `Read ${blog?.[0]?.title?.rendered} on the Lands Domains blog. Stay updated with the latest trends and strategies.`,
+      `Read ${blog?.[0]?.title?.rendered} on the Web3-Crypto blog. Stay updated with the latest trends and strategies.`,
     keywords:
-      blog?.[0]?.tags?.join(", ") + "blog, lands domains, articles, insights",
+      blog?.[0]?.tags?.join(", ") + "blog, web3-crypto, articles, insights",
     icons: [
       { rel: "icon", url: "/favicon.ico", sizes: "any", type: "image/x-icon" },
       { rel: "apple-touch-icon", url: "/apple-touch-icon.png" },
@@ -41,21 +41,21 @@ export async function generateMetadata({
       title: blog?.[0]?.title?.rendered,
       description:
         parsedTexts +
-        "Discover detailed posts and updates from the Lands Domains team on various topics.",
-      url: `https://lands.domains/blogs/${slug}`,
-      siteName: "Lands Domains",
+        "Discover detailed posts and updates from the Web3-Crypto team on various topics.",
+      url: `https://web3-crypto/${slug}`,
+      siteName: "Web3-Crypto",
       images:
         parsedImages.images.length > 0
           ? [
               {
                 url: parsedImages.images[0],
-                alt: blog?.[0]?.title.rendered + "Lands Domains Blog Image",
+                alt: blog?.[0]?.title.rendered + "Web3-Crypto Blog Image",
               },
             ]
           : [
               {
-                url: "https://lands.domains/assets/og/lands.domains.png",
-                alt: "Lands Domains Blog",
+                url: "https://web3-crypto/assets/og/web3-crypto.png",
+                alt: "Web3-Crypto Blog",
               },
             ],
       type: "website",
@@ -65,15 +65,15 @@ export async function generateMetadata({
       title: blog?.[0]?.title?.rendered,
       description:
         parsedTexts +
-        "Explore detailed articles and updates from the Lands Domains team.",
+        "Explore detailed articles and updates from the Web3-Crypto team.",
       images:
         parsedImages.images.length > 0
           ? parsedImages.images[0]
-          : ["https://lands.domains/assets/og/lands.domains.png"],
-      site: "@LandsDomainssearch",
+          : ["https://web3-crypto/assets/og/web3-crypto.png"],
+      site: "@Web3-Cryptosearch",
     },
     alternates: {
-      canonical: `https://lands.domains/blogs/${slug}`,
+      canonical: `https://web3-crypto/${slug}`,
     },
   };
 }
@@ -91,28 +91,28 @@ const BlogItemPage = async ({ params }: IBlogPageProps) => {
           "@type": "BlogPosting",
           headline: blog?.[0]?.title?.rendered,
           image: parseHtmlContent(blog?.[0]?.content?.rendered).images[0],
-          editor: "Lands Domains",
+          editor: "Web3-Crypto",
           publisher: {
             "@type": "Organization",
-            name: "Lands Domains",
+            name: "Web3-Crypto",
             logo: {
               "@type": "ImageObject",
-              url: "https://lands.domains/assets/og/lands.domains.png",
+              url: "https://web3-crypto/assets/og/web3-crypto.png",
             },
           },
-          url: `https://lands.domains/blogs/${slug}`,
+          url: `https://web3-crypto/${slug}`,
           datePublished: blog?.[0]?.date,
           dateModified: blog?.[0]?.modified,
           description:
             parseHtmlContent(blog?.[0]?.excerpt?.rendered).text +
-            `Read ${blog?.[0]?.title?.rendered} on the Lands Domains blog. Stay updated with the latest trends and strategies.`,
+            `Read ${blog?.[0]?.title?.rendered} on the Web3-Crypto blog. Stay updated with the latest trends and strategies.`,
           author: {
             "@type": "Organization",
             name: blog?.[0]?.uagb_author_info?.display_name,
           },
           mainEntityOfPage: {
             "@type": "WebPage",
-            "@id": `https://lands.domains/blogs/${slug}`,
+            "@id": `https://web3-crypto/${slug}`,
           },
         })}
       </Script>
