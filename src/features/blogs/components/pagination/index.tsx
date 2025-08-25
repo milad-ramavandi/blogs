@@ -18,13 +18,12 @@ export default function Pagination({ totalPages, currentPage }: Props) {
   const redirect = (page: number) => {
     const newParams = new URLSearchParams(searchParams.toString());
     if (page === 1) {
-      newParams.delete("paged");
+      newParams.delete("page");
     } else {
-      newParams.set("paged", page.toString());
+      newParams.set("page", page.toString());
     }
     const query = newParams.toString();
-    router.push(`${pathname}${query ? `?${query}` : ""}`, {scroll: false});
-    // return `${pathname}${query ? `?${query}` : ""}`;
+    router.push(`${pathname}${query ? `?${query}` : ""}#tab-search`);
   };
 
   const createPagination = () => {

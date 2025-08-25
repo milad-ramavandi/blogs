@@ -20,8 +20,8 @@ const CategoriesList = async ({
             <div className="flex items-center gap-2">
               <ChevronRightIcon isChevronRight className="!text-[rgb(207,255,17)]" />
               <Link
-                href={"/"}
-                scroll={false}
+                href={"/#tab-search"}
+                // scroll={false}
                 className="hover:translate-x-4 transition duration-300 text-[14px]"
               >
                 All
@@ -47,9 +47,10 @@ const CategoriesList = async ({
                     <Link
                       href={{
                         pathname: "/",
-                        query: { category_id: category?.id },
+                        query: { category: category?.name?.toLowerCase().replace(" ", "-") },
+                        hash:"tab-search"
                       }}
-                      scroll={false}
+                      // scroll={false}
                       className="hover:translate-x-4 transition duration-300 text-[14px]"
                     >
                       {category?.name}

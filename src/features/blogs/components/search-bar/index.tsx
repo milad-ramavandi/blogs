@@ -25,15 +25,15 @@ const SearchBar = ({ searchValue }: Props) => {
       return;
     }
     const params = new URLSearchParams(window.location.search);
-    params.delete("paged");
+    params.delete("page");
     if (debouncedValue) {
-      params.delete("tag_id");
-      params.delete("category_id");
+      params.delete("tag");
+      params.delete("category");
       params.set("search", debouncedValue);
     } else {
       params.delete("search");
     }
-    router.push(`${pathname}?${params.toString()}`, {scroll:false});
+    router.push(`${pathname}?${params.toString()}#tab-search`);
 
   }, [debouncedValue]);
 
@@ -54,15 +54,6 @@ const SearchBar = ({ searchValue }: Props) => {
         "
       >
         <div className="flex flex-grow items-center gap-3 overflow-visible">
-          {/* <div className="relative w-[30px] h-[24px] sm:w-[36px] sm:h-[30px]">
-            <Image
-              fill
-              src={"/Group.svg"}
-              alt="logo"
-              priority
-              sizes="(max-width:640px) 100px, 50px"
-            />
-          </div> */}
           <input
             type="text"
             placeholder="Search anything privately..."

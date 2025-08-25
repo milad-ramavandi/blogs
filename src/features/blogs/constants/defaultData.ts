@@ -3,10 +3,10 @@ import { IBlogTab, IBlogTag } from "../types";
 export const tabs: IBlogTab[] = [
   { label: "All", value: "all" },
   { label: "Crypto News", value: "crypto-news", id: "6" },
-  { label: "Main", value: "main", id: "2" },
-  { label: "Popular Posts", value: "popular", id: "5" },
-  { label: "Top Videos", value: "video", id: "3" },
-  { label: "Trend", value: "trend", id: "4" },
+  { label: "Featured", value: "featured", id: "2" },
+  { label: "Hot Picks", value: "hot-picks", id: "5" },
+  { label: "Trends", value: "trends", id: "4" },
+  { label: "Watch", value: "watch", id: "3" },
 ];
 
 export const tagsList: IBlogTag[] = [

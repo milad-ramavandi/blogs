@@ -13,7 +13,7 @@ export default function Error({
       </h2>
       <button
         onClick={() => window.location.reload()}
-        className="px-4 py-2 bg-[#181818] text-white rounded hover:bg-[#ff8d00] transition duration-300"
+        className="px-4 py-2 bg-[#181818] text-white rounded hover:bg-[rgb(207,255,17)] hover:text-black transition duration-300"
       >
         Try again
       </button>

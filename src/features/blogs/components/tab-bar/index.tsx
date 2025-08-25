@@ -8,12 +8,13 @@ import { usePathname, useSearchParams } from "next/navigation";
 
 export default function TabBar() {
   const searchParams = useSearchParams();
-  const currentTag = tagsList.find((tag) => tag.id === searchParams.get("tag_id"));
+  const currentTag = tagsList.find((tag) => tag?.label?.replace("# ", "") === searchParams.get("tag"));
+  console.log(currentTag)
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
   const pathname = usePathname();
-  const activeTab = searchParams.get("category_id") || "all"
+  const activeTab = searchParams.get("category") || "all"
 
   const checkForScrollPosition = () => {
     if (!scrollRef.current) return;
@@ -54,7 +55,7 @@ export default function TabBar() {
         <div
           ref={scrollRef}
           onScroll={checkForScrollPosition}
-          className="flex items-center justify-start sm:justify-center xl:justify-start gap-2 py-4 scrollbar-hide pl-1.5 lg:pl-6 overflow-x-scroll"
+          className="flex items-center justify-start sm:justify-center xl:justify-start gap-2 py-4 scrollbar-hide pl-1.5 lg:pl-6 lg:pr-2 overflow-x-scroll"
         >
           {tabs.map((tab) => {
             return (
@@ -62,7 +63,7 @@ export default function TabBar() {
                 key={tab.value}
                 href={{
                   pathname,
-                  query: tab?.value === "all" ? {} : {category_id:tab?.id}
+                  query: tab?.value === "all" ? {} : {category:tab?.value}
                 }}
                 scroll={false}
                 className={`px-1.5 py-1 text-[16px] font-bold rounded-full transition-colors duration-300 whitespace-nowrap text-[#ffffffcc] ${
@@ -76,12 +77,11 @@ export default function TabBar() {
             );
           })}
           {currentTag && (
-            <Link
-              href={`/blog?tag_id=${currentTag.id}`}
+            <button
               className="px-1.5 py-1 bg-[rgb(207,255,17)] shadow-[0_0_5px_5px_rgba(207,255,17,0.5)] text-black text-[16px] rounded-full font-bold transition-colors duration-300 whitespace-nowrap"
             >
               {currentTag.label}
-            </Link>
+            </button>
           )}
         </div>
         {canScrollRight && (

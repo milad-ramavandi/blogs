@@ -2,11 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import CalenderIcon from "../icons/calender";
 import { IBlog } from "../../types";
-import DateFormatRelative from "../../utils/date-format-relative";
 import PlayCircle from "../icons/play-circle";
 import BlogModalWrapper from "../blog-modal-wrapper";
 import getVideoIdOrThumbnailUrl from "../../utils/get-video-id-or-thumbnail-url";
 import { GlowingEffect } from "../glowing-effect";
+import { RelativeTime } from "../../libs";
+
 
 type Props = {
   blog: IBlog;
@@ -74,7 +75,7 @@ const BlogCard = ({ blog }: Props) => {
               <p title={blog?.categories?.[0]}>
                 {blog?.categories?.[0] ? blog?.categories?.[0] : blog?.category}
               </p>
-              <p>{DateFormatRelative(blog?.date as string)}</p>
+              <p>{RelativeTime(blog?.date as string)}</p>
             </div>
 
             {blog?.first_image && !blog?.acf?.videourl ? (

@@ -1,12 +1,12 @@
 import TagIcon from "@/features/blogs/components/icons/tag";
 import Link from "next/link";
-import DateFormatRelative from "../../utils/date-format-relative";
 import { IBlogsListResponse, ICategory } from "../../types";
 import CategoriesList from "../../components/categories-list";
 import BlogCard from "../../components/blog-card";
 import BlogShare from "../../components/blog-share";
 import { tagsList } from "../../constants/defaultData";
 import { BackgroundBeams } from "../../components/background-beams";
+import { RelativeTime } from "../../libs";
 
 const BlogItemContent = ({
   date,
@@ -54,7 +54,7 @@ const BlogItemContent = ({
           <div className="bg-white/15 backdrop-blur-0 border border-white/15 px-6 py-3 rounded-xl">
             <div className="flex flex-col">
               <span className="text-xs text-[#FFFFFF96]">
-                {DateFormatRelative(date)}
+                {RelativeTime(date)}
               </span>
               <h1 className="text-[24px] text-white mt-3 font-bold">{title}</h1>
               <article
@@ -70,16 +70,16 @@ const BlogItemContent = ({
                 <span>Tags:</span>
               </div>
               <div className="flex items-center flex-wrap gap-3">
-                {tags?.map((tag) => {
+                {tags?.map((tag, index) => {
                   const mainTag = tagsList?.find(
                     (item) => item?.id === tag.toString()
                   );
                   return (
                     <Link
-                      key={mainTag?.id}
+                      key={index}
                       href={{
                         pathname:"/",
-                        query: {tag_id:mainTag?.id}
+                        query: {tag:mainTag?.label?.replace("# ", "")}
                       }}
                       scroll={false}
                       className={`px-3 py-1.5 sm:px-5 sm:py-2.5 bg-white/15 backdrop-blur-0 hover:bg-[rgb(207,255,17)] hover:text-black transition duration-300 text-[16px] md:text-[14px] rounded-sm whitespace-nowrap`}

@@ -41,14 +41,13 @@ const BlogsPage = async ({
   searchParams,
 }: {
   searchParams: Promise<{
-    paged: string;
-    tag_id: string;
+    page: string;
+    tag: string;
     search: string;
-    category_id: string;
+    category: string;
   }>;
 }) => {
-  const { paged, tag_id, search, category_id } = await searchParams;
-  const page = Number(paged) || 1;
+  const { page, tag, search, category } = await searchParams;
   return (
     <main>
       <Script type="application/ld+json">
@@ -70,10 +69,10 @@ const BlogsPage = async ({
         })}
       </Script>
       <BlogsContent
-        page={page ? page : 1}
-        tag_id={tag_id}
+        page={Number(page) || 1}
+        tag={tag}
         search={search ?? ""}
-        category_id={category_id ?? ""}
+        category={category ?? ""}
       />
     </main>
   );

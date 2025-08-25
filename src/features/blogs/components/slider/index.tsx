@@ -11,8 +11,9 @@ import "swiper/css/effect-fade";
 import Image from "next/image";
 import ArrowRight from "../icons/arrow-right";
 import Link from "next/link";
-import DateFormatRelative from "../../utils/date-format-relative";
 import CalenderIcon from "../icons/calender";
+import { RelativeTime } from "../../libs";
+
 
 const Slider = ({ slides }: { slides: IBlog[] }) => {
   const prevRef = useRef<HTMLButtonElement | null>(null);
@@ -71,6 +72,7 @@ const Slider = ({ slides }: { slides: IBlog[] }) => {
                   width={900}
                   height={500}
                   className="w-full h-full object-cover rounded-xl"
+                  priority
                 />
               </Link>
               <div className="flex flex-col gap-1 pl-2 items-start justify-start w-full">
@@ -89,7 +91,7 @@ const Slider = ({ slides }: { slides: IBlog[] }) => {
                   </div>
 
                   <span className="font-medium text-xs text-[#ffffff96]">
-                    ({DateFormatRelative(slide?.date as string)})
+                    ({RelativeTime(slide?.date as string)})
                   </span>
                 </div>
               </div>

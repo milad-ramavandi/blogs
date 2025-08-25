@@ -19,9 +19,7 @@ export async function generateMetadata({
   const { slug } = await params;
 
   const blog = await getBlog({ slug });
-  if (!blog) {
-    return notFound();
-  }
+
   const parsedImages = parseHtmlContent(blog?.[0]?.content?.rendered);
   const parsedTexts = parseHtmlContent(blog?.[0]?.excerpt?.rendered).text;
 
@@ -81,6 +79,9 @@ export async function generateMetadata({
 const BlogItemPage = async ({ params }: IBlogPageProps) => {
   const { slug } = await params;
   const blog = await getBlog({ slug });
+  if (!blog || !blog[0]?.content?.rendered) {
+   return notFound();
+  }
   const categoriesList = await getCategoriesList();
   const popularBlogs = await getBlogsList({ category_id: "5", page: 1 });
   return (
