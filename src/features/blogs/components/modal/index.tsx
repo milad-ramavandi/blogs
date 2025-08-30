@@ -4,13 +4,13 @@ import React, { ReactNode, useEffect } from "react";
 import ReactDOM from "react-dom";
 import XMarkIcon from "../icons/x-mark";
 
-interface ModalProps {
+interface IModalProps {
   isOpen: boolean;
   onClose: () => void;
   children: ReactNode;
 }
 
-const Modal = ({ isOpen, onClose, children }: ModalProps) => {
+const Modal = ({ isOpen, onClose, children }: IModalProps) => {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";

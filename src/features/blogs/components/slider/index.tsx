@@ -63,7 +63,7 @@ const Slider = ({ slides }: { slides: IBlog[] }) => {
           <SwiperSlide key={index}>
             <div className="flex flex-col gap-2 relative w-full h-full overflow-hidden rounded-xl">
               <Link
-                href={`/blogs/${slide?.slug}`}
+                href={`/${slide?.slug}`}
                 className="w-full lg:h-[517px] md:h-[300px] h-[270px] rounded-xl"
               >
                 <Image
@@ -77,7 +77,7 @@ const Slider = ({ slides }: { slides: IBlog[] }) => {
               </Link>
               <div className="flex flex-col gap-1 pl-2 items-start justify-start w-full">
                 <Link
-                  href={`/blogs/${slide?.slug}`}
+                  href={`/${slide?.slug}`}
                   className="w-full line-clamp-1 font-medium text-white text-[16px]"
                 >
                   {slide.title}
