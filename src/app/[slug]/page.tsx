@@ -24,10 +24,10 @@ export async function generateMetadata({
   const parsedTexts = parseHtmlContent(blog?.[0]?.excerpt?.rendered).text;
 
   return {
-    title: blog?.[0]?.title?.rendered + "Blog Post | Web3-Crypto",
+    title: blog?.[0]?.title?.rendered + "Blog Post | blogs-dusky-nu.vercel.app",
     description:
       parsedTexts +
-      `Read ${blog?.[0]?.title?.rendered} on the Web3-Crypto blog. Stay updated with the latest trends and strategies.`,
+      `Read ${blog?.[0]?.title?.rendered} on the  blogs-dusky-nu.vercel.app blog. Stay updated with the latest trends and strategies.`,
     keywords:
       blog?.[0]?.tags?.join(", ") + "blog, web3-crypto, articles, insights",
     icons: [
@@ -39,9 +39,9 @@ export async function generateMetadata({
       title: blog?.[0]?.title?.rendered,
       description:
         parsedTexts +
-        "Discover detailed posts and updates from the Web3-Crypto team on various topics.",
-      url: `https://web3-crypto/${slug}`,
-      siteName: "Web3-Crypto",
+        "Discover detailed posts and updates from the  blogs-dusky-nu.vercel.app team on various topics.",
+      url: `https://blogs-dusky-nu.vercel.app/${slug}`,
+      siteName: "blogs-dusky-nu.vercel.app",
       images:
         parsedImages.images.length > 0
           ? [
@@ -52,8 +52,8 @@ export async function generateMetadata({
             ]
           : [
               {
-                url: "https://web3-crypto/assets/og/web3-crypto.png",
-                alt: "Web3-Crypto Blog",
+                url: "https://blogs-dusky-nu.vercel.app/web3-crypto.jpg",
+                alt: "blogs-dusky-nu.vercel.app Blog",
               },
             ],
       type: "website",
@@ -63,15 +63,15 @@ export async function generateMetadata({
       title: blog?.[0]?.title?.rendered,
       description:
         parsedTexts +
-        "Explore detailed articles and updates from the Web3-Crypto team.",
+        "Explore detailed articles and updates from the blogs-dusky-nu.vercel.app team.",
       images:
         parsedImages.images.length > 0
           ? parsedImages.images[0]
-          : ["https://web3-crypto/assets/og/web3-crypto.png"],
+          : ["https://blogs-dusky-nu.vercel.app/web3-crypto.jpg"],
       site: "@Web3-Cryptosearch",
     },
     alternates: {
-      canonical: `https://web3-crypto/${slug}`,
+      canonical: `https://blogs-dusky-nu.vercel.app/${slug}`,
     },
   };
 }
@@ -92,28 +92,28 @@ const BlogItemPage = async ({ params }: IBlogPageProps) => {
           "@type": "BlogPosting",
           headline: blog?.[0]?.title?.rendered,
           image: parseHtmlContent(blog?.[0]?.content?.rendered).images[0],
-          editor: "Web3-Crypto",
+          editor: "blogs-dusky-nu.vercel.app",
           publisher: {
             "@type": "Organization",
             name: "Web3-Crypto",
             logo: {
               "@type": "ImageObject",
-              url: "https://web3-crypto/assets/og/web3-crypto.png",
+              url: "https://blogs-dusky-nu.vercel.app/web3-crypto.jpg",
             },
           },
-          url: `https://web3-crypto/${slug}`,
+          url: `https://blogs-dusky-nu.vercel.app/${slug}`,
           datePublished: blog?.[0]?.date,
           dateModified: blog?.[0]?.modified,
           description:
             parseHtmlContent(blog?.[0]?.excerpt?.rendered).text +
-            `Read ${blog?.[0]?.title?.rendered} on the Web3-Crypto blog. Stay updated with the latest trends and strategies.`,
+            `Read ${blog?.[0]?.title?.rendered} on the blogs-dusky-nu.vercel.app blog. Stay updated with the latest trends and strategies.`,
           author: {
             "@type": "Organization",
             name: blog?.[0]?.uagb_author_info?.display_name,
           },
           mainEntityOfPage: {
             "@type": "WebPage",
-            "@id": `https://web3-crypto/${slug}`,
+            "@id": `https://blogs-dusky-nu.vercel.app/${slug}`,
           },
         })}
       </Script>

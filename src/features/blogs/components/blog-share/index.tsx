@@ -20,7 +20,7 @@ const BlogShare = () => {
       <span>Share:</span>
       <div className="flex items-center gap-3">
         <Link
-          href={`https://t.me/share/url?url=https://chatoshi.ai${pathname}`}
+          href={`https://t.me/share/url?url=https://blogs-dusky-nu.vercel.app/${pathname}`}
           target="_blank"
         >
           <TelegramIcon />

@@ -3,37 +3,37 @@ import { Metadata } from "next";
 import Script from "next/script";
 
 export const metadata:Metadata = {
-  title: "Blog | Web3-Crypto",
+  title: "Blog | blogs-dusky-nu.vercel.app",
   description:
-    "Read the latest articles, tutorials, and updates on web3, crypto, and decentralized technologies from the web3-crypto blog.",
+    "Read the latest articles, tutorials, and updates on web3, crypto, and decentralized technologies from the blogs-dusky-nu.vercel.app blog.",
   openGraph: {
-    title: "Blog | Web3-Crypto",
+    title: "Blog | blogs-dusky-nu.vercel.app",
     description:
-      "Stay up to date with insightful articles and expert content on crypto and web3 technology – all from the official web3-crypto blog.",
-    url: "https://web3-crypto",
+      "Stay up to date with insightful articles and expert content on crypto and web3 technology – all from the official blogs-dusky-nu.vercel.app blog.",
+    url: "https://blogs-dusky-nu.vercel.app/",
     type: "website",
     images: [
       {
-        url: "https://web3-crypto/assets/og/web3-crypto.png",
-        width: 600,
-        height: 315,
+        url: "https://blogs-dusky-nu.vercel.app/web3-crypto.jpg",
+        width: 2400,
+        height: 1600,
         alt: "Web3-Crypto Blog",
         type: "image/png",
       },
     ],
-    siteName: "Web3-Crypto Blog",
+    siteName: "blogs-dusky-nu.vercel.app Blog",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blog | Web3-Crypto",
+    title: "Blog | blogs-dusky-nu.vercel.app",
     description:
-      "Explore crypto insights and web3 tutorials with the official Web3-Crypto blog. Stay informed and ahead of the curve!",
-    site: "@Web3-Crypto",
-    images: ["https://web3-crypto/assets/og/web3-crypto.png"],
+      "Explore crypto insights and web3 tutorials with the official blogs-dusky-nu.vercel.app blog. Stay informed and ahead of the curve!",
+    site: "@blogs-dusky-nu.vercel.app",
+    images: ["https://blogs-dusky-nu.vercel.app/web3-crypto.jpg"],
   },
 
   alternates: {
-    canonical: "https://web3-crypto",
+    canonical: "https://blogs-dusky-nu.vercel.app",
   },
 };
 
@@ -54,16 +54,16 @@ const BlogsPage = async ({
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Blog",
-          url: "https://web3-crupto",
-          name: "Web3-Crypto Blog",
+          url: "https://blogs-dusky-nu.vercel.app",
+          name: "blogs-dusky-nu.vercel.app Blog",
           description:
             "Articles and tutorials on web3 and crypto",
           publisher: {
             "@type": "Organization",
-            name: "Web3-Crypto",
+            name: "https://blogs-dusky-nu.vercel.app",
             logo: {
               "@type": "ImageObject",
-              url: "https://web3-crypto/assets/og/web3-crypto.png",
+              url: "https://blogs-dusky-nu.vercel.app/web3-crypto.jpg",
             },
           },
         })}
