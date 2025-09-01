@@ -21,6 +21,7 @@ export async function generateMetadata({
   const blog = await getBlog({ slug });
 
   const parsedImages = parseHtmlContent(blog?.[0]?.content?.rendered);
+  console.log(parsedImages);
   const parsedTexts = parseHtmlContent(blog?.[0]?.excerpt?.rendered).text;
 
   return {
@@ -46,7 +47,7 @@ export async function generateMetadata({
         parsedImages.images.length > 0
           ? [
               {
-                url: parsedImages.images[0],
+                url: parsedImages.images[0].includes(".avif") || parsedImages.images[0].includes(".webp") ? "https://blogs-dusky-nu.vercel.app/web3-crypto.jpg" : parsedImages?.images[0],
                 alt: blog?.[0]?.title.rendered + "Web3-Crypto Blog Image",
               },
             ]

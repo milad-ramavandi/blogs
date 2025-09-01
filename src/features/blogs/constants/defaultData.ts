@@ -17,4 +17,6 @@ export const tagsList: IBlogTag[] = [
   { id: "12", label: "# Economics" },
   { id: "13", label: "# Adoption" },
   { id: "16", label: "# testapi" },
+  { id: "48", label: "# Trading" },
+  { id: "49", label: "# Altseason" },
 ];
