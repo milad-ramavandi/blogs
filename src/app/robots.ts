@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://blogs-dusky-nu.vercel.app/sitemap.ts',
+    sitemap: 'https://blogs-dusky-nu.vercel.app/sitemap.xml',
   }
 }

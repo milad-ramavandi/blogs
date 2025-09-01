@@ -44,7 +44,6 @@ const BlogCard = ({ blog }: Props) => {
               src={blog?.first_image}
               alt={blog?.title}
               className="hover:scale-110 transition duration-300 bg-gray-600 object-cover"
-              priority
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
             />
           </Link>

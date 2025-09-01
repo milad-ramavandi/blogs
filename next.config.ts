@@ -13,7 +13,7 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "blog.hero.io",
-        pathname: "/**",
+        pathname: "/wp-content/uploads/**",
        
       },
       {
