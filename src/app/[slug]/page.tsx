@@ -50,13 +50,16 @@ export async function generateMetadata({
         //         alt: blog?.[0]?.title.rendered + "Web3-Crypto Blog Image",
         //       },
         //     ]
-        //   : 
-          [
-              {
-                url: "https://blogs-dusky-nu.vercel.app/web3-crypto.jpg",
-                alt: "blogs-dusky-nu.vercel.app Blog",
-              },
-            ],
+        //   :
+        [
+          {
+            url: "https://blogs-dusky-nu.vercel.app/web3-crypto.jpg",
+            width: 2400,
+            height: 1600,
+            alt: "Web3-Crypto Blog",
+            type: "image/png",
+           },
+        ],
       type: "website",
     },
     twitter: {
@@ -69,8 +72,8 @@ export async function generateMetadata({
         // parsedImages.images.length > 0
         //   ? parsedImages.images[0]
 
-        //   : 
-          ["https://blogs-dusky-nu.vercel.app/web3-crypto.jpg"],
+        //   :
+        ["https://blogs-dusky-nu.vercel.app/web3-crypto.jpg"],
       site: "@Web3-Cryptosearch",
     },
     alternates: {
@@ -83,7 +86,7 @@ const BlogItemPage = async ({ params }: IBlogPageProps) => {
   const { slug } = await params;
   const blog = await getBlog({ slug });
   if (!blog || !blog[0]?.content?.rendered) {
-   return notFound();
+    return notFound();
   }
   const categoriesList = await getCategoriesList();
   const popularBlogs = await getBlogsList({ category_id: "5", page: 1 });
