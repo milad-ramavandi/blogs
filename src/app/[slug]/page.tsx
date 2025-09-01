@@ -20,7 +20,7 @@ export async function generateMetadata({
 
   const blog = await getBlog({ slug });
 
-  const parsedImages = parseHtmlContent(blog?.[0]?.content?.rendered);
+  // const parsedImages = parseHtmlContent(blog?.[0]?.content?.rendered);
   const parsedTexts = parseHtmlContent(blog?.[0]?.excerpt?.rendered).text;
 
   return {
@@ -43,14 +43,15 @@ export async function generateMetadata({
       url: `https://blogs-dusky-nu.vercel.app/${slug}`,
       siteName: "blogs-dusky-nu.vercel.app",
       images:
-        parsedImages.images.length > 0
-          ? [
-              {
-                url: parsedImages.images[0],
-                alt: blog?.[0]?.title.rendered + "Web3-Crypto Blog Image",
-              },
-            ]
-          : [
+        // parsedImages.images.length > 0
+        //   ? [
+        //       {
+        //         url: parsedImages.images[0],
+        //         alt: blog?.[0]?.title.rendered + "Web3-Crypto Blog Image",
+        //       },
+        //     ]
+        //   : 
+          [
               {
                 url: "https://blogs-dusky-nu.vercel.app/web3-crypto.jpg",
                 alt: "blogs-dusky-nu.vercel.app Blog",
@@ -65,9 +66,11 @@ export async function generateMetadata({
         parsedTexts +
         "Explore detailed articles and updates from the blogs-dusky-nu.vercel.app team.",
       images:
-        parsedImages.images.length > 0
-          ? parsedImages.images[0]
-          : ["https://blogs-dusky-nu.vercel.app/web3-crypto.jpg"],
+        // parsedImages.images.length > 0
+        //   ? parsedImages.images[0]
+
+        //   : 
+          ["https://blogs-dusky-nu.vercel.app/web3-crypto.jpg"],
       site: "@Web3-Cryptosearch",
     },
     alternates: {
