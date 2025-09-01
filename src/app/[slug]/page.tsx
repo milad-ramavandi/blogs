@@ -57,7 +57,7 @@ export async function generateMetadata({
             width: 2400,
             height: 1600,
             alt: "Web3-Crypto Blog",
-            type: "image/png",
+            type: "image/jpg",
            },
         ],
       type: "website",
